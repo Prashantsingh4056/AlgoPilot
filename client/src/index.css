@@ -9,3 +9,8 @@ body {
 }
 
 
+/* Standard syntax for modern browsers */
+::selection {
+  background-color: rgba(129,65,254,0.6); /* Changes the highlight background */
+  color: #ffffff;            /* Changes the text color itself */
+}

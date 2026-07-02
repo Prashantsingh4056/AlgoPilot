@@ -46,8 +46,10 @@ export default function Register() {
     <div className="min-h-screen bg-slate-950 flex items-center justify-center px-4 py-10">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <div className="inline-flex w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-green-400 items-center justify-center text-white font-bold text-lg mb-4">
-            AP
+          <div className='flex justify-center items-center'>
+          <div className="w-12 h-12 rounded-lg bg-gradient-to-br  flex items-center justify-center text-white font-bold">
+            <img src="public\logo.png" alt="" />
+          </div>
           </div>
           <h1 className="text-2xl font-bold text-white">Create your account</h1>
           <p className="text-slate-400 mt-1">Personalize your AI-powered DSA journey</p>

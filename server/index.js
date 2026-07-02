@@ -33,7 +33,7 @@ app.use('/api/reviewer', reviewerRoutes);
 app.use('/api/interview', interviewRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/export', exportRoutes);
-app.use('/api/solved-problems', solvedProblemRoutes);
+app.use('/api/reviewed-problems', solvedProblemRoutes);
 
 app.use((req, res) => {
   res.status(404).json({ success: false, message: 'Route not found' });

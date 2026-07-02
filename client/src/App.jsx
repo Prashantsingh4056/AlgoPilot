@@ -13,7 +13,7 @@ import Profile from './pages/Profile';
 import NotFound from './pages/NotFound';
 import { useAuth } from './context/AuthContext';
 import LoadingSpinner from './components/LoadingSpinner';
-import SolvedProblems from './pages/SolvedProblems';
+import ReviewedProblems from './pages/ReviewedProblems';
 
 function PublicRoute({ children }) {
   const { user, loading } = useAuth();
@@ -41,7 +41,7 @@ export default function App() {
         <Route path="/reviewer" element={<Reviewer />} />
         <Route path="/interview" element={<Interview />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/solved-problems" element={<SolvedProblems />} />
+        <Route path="/solved-problems" element={<ReviewedProblems />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>

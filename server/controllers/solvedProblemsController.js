@@ -1,35 +1,27 @@
 import SolvedProblem from "../models/SolvedProblem.js";
+import ReviewedProblem from "../models/ReviewedProblem.js";
 
-const getSolvedProblems = async (req, res) => {
+const getReviewedProblems = async (req, res) => {
+
     try {
-        const problems = await SolvedProblem.find({
+        const reviewedProblems = await ReviewedProblem.find({
             userId: req.user._id,
-        }).sort({ dateSolved: -1 });
+        }).sort({reviewedAt: -1});
 
-        res.json({
+        res.status(200).json({
             success: true,
-            problems,
+            reviewedProblems,
         });
-    } catch (err) {
-        res.status(500).json({
-            success: false,
-            message: err.message,
-        });
-    }
-};
-
-const addProblem = async (req , res) => {
-
-    try {
-
-        
         
     } catch (error) {
-        res.status(500).json({
+        
+        req.status(500).json({
             success: false,
             message: error.message
         })
     }
-}
 
-export { getSolvedProblems , addProblem};
+};
+
+
+export { getReviewedProblems};

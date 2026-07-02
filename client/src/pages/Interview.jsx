@@ -3,7 +3,7 @@ import Card from '../components/Card';
 import Button from '../components/Button';
 import api from '../services/api';
 
-const COMPANIES = ['Google', 'Amazon', 'Microsoft', 'Atlassian'];
+const COMPANIES = ['Google', 'Amazon', 'Microsoft', 'Atlassian' , 'Facebook', 'Apple', 'Netflix', 'Adobe', 'Salesforce', 'Uber'];
 
 export default function Interview() {
   const [company, setCompany] = useState('Google');
@@ -51,7 +51,7 @@ export default function Interview() {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 overflow-hidden h-[calc(100vh-64px-48px)] overflow-y-auto [scrollbar-color:theme(colors.slate.700)_transparent] [scrollbar-width:thin]">
       <div>
         <h1 className="text-2xl font-bold text-white">Mock Interview</h1>
         <p className="text-slate-400">Practice company-specific DSA interview questions</p>
@@ -63,7 +63,7 @@ export default function Interview() {
             <button
               key={c}
               onClick={() => setCompany(c)}
-              className={`px-4 py-2 rounded-xl text-sm font-medium transition-colors ${
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer ${
                 company === c
                   ? 'bg-blue-600 text-white'
                   : 'bg-slate-800 text-slate-400 hover:bg-slate-700'

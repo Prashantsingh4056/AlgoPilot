@@ -69,7 +69,7 @@ export default function Dashboard() {
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <Card title="Welcome">
           <p className="text-2xl font-bold text-white">{user?.name}</p>
-          <p className="text-slate-400 text-sm mt-1">{user?.email}</p>
+          <p className="text-slate-400 text-sm mt-1 truncate">{user?.email}</p>
         </Card>
         <Card title="Skill Level">
           <p className="text-2xl font-bold text-blue-400">{user?.skillLevel}</p>
@@ -100,7 +100,7 @@ export default function Dashboard() {
           ) : (
             <p className="text-slate-400 text-sm">No roadmap yet. Generate one in the Planner.</p>
           )}
-          <Link to="/roadmap" className="inline-block mt-4 text-blue-400 text-sm hover:underline">
+          <Link to="/roadmap" className="inline-block mt-4 text-blue-400 text-sm hover:text-blue-500 border border-blue-400 hover:border-blue-500 px-3 py-1 rounded-md transition-colors no-underline">
             View full roadmap →
           </Link>
         </Card>

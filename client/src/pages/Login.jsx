@@ -30,13 +30,16 @@ export default function Login() {
     <div className="min-h-screen bg-slate-950 flex items-center justify-center px-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <div className="inline-flex w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-green-400 items-center justify-center text-white font-bold text-lg mb-4">
-            AP
+          <div className='flex justify-center items-center'>
+          <div className="w-12 h-12 rounded-lg bg-gradient-to-br  flex items-center justify-center text-white font-bold">
+            <img src="public\logo.png" alt="" />
+          </div>
           </div>
           <h1 className="text-2xl font-bold text-white">Welcome back</h1>
           <p className="text-slate-400 mt-1">Sign in to continue your DSA journey</p>
         </div>
         <form onSubmit={handleSubmit} className="bg-slate-800/60 border border-slate-700/50 rounded-2xl p-8 space-y-5">
+            <div className='border border-gray-600 text-xs bg-black p-1.5 rounded-md '>Demo Credentials :  <br /> Email: <span className=" text-green-400">demo@algopilot.com</span> &nbsp;, Password: <span className=" text-green-400">demo@123</span></div>
           {error && (
             <div className="p-3 bg-red-500/10 border border-red-500/30 rounded-xl text-red-400 text-sm">
               {error}

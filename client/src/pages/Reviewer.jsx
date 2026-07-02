@@ -3,13 +3,14 @@ import Card from '../components/Card';
 import Input from '../components/Input';
 import Button from '../components/Button';
 import api from '../services/api';
+import ReactMarkdown from 'react-markdown';
 
-const LANGUAGES = ['JavaScript', 'Python', 'Java', 'C++'];
+const LANGUAGES = ['JavaScript', 'Python', 'Java', 'C++' , 'C#', 'Go', 'Ruby', 'TypeScript', 'Kotlin', 'Swift', 'PHP', 'Rust', 'Scala', 'Perl', 'Haskell', 'Lua', 'Dart', 'Elixir', 'Clojure', 'F#'];
 const DIFFICULTIES = ['Easy', 'Medium', 'Hard'];
 
 export default function Reviewer() {
   const [form, setForm] = useState({
-    language: 'JavaScript',
+    language: 'C++',
     problemName: '',
     topic: '',
     difficulty: 'Medium',
@@ -32,12 +33,16 @@ export default function Reviewer() {
     try {
       const res = await api.post('/reviewer/review', form);
       setReview(res.data);
+
+      
     } catch (err) {
       setError(err.response?.data?.message || 'Failed to review code');
     } finally {
       setLoading(false);
     }
   };
+
+
 
   return (
     <div className="space-y-6 overflow-hidden h-[calc(100vh-64px-48px)] overflow-y-auto [scrollbar-color:theme(colors.slate.700)_transparent] [scrollbar-width:thin]">
@@ -91,19 +96,19 @@ export default function Reviewer() {
       {review && (
         <div className="grid lg:grid-cols-2 gap-4">
           <Card title="Correctness">
-            <p className="text-slate-300 whitespace-pre-wrap">{review.correctness}</p>
+            <p className="text-slate-300 whitespace-pre-wrap"><ReactMarkdown>{review.correctness}</ReactMarkdown></p>
           </Card>
           <Card title="Complexity">
             <div className="space-y-2">
-              <p className="text-slate-300"><span className="text-slate-500">Time:</span> {review.timeComplexity}</p>
-              <p className="text-slate-300"><span className="text-slate-500">Space:</span> {review.spaceComplexity}</p>
+              <p className="text-slate-300"><span className="text-slate-500">Time:</span> <ReactMarkdown>{review.timeComplexity}</ReactMarkdown></p>
+              <p className="text-slate-300"><span className="text-slate-500">Space:</span> <ReactMarkdown>{review.spaceComplexity}</ReactMarkdown></p>
             </div>
           </Card>
           <Card title="Edge Cases">
-            <p className="text-slate-300 whitespace-pre-wrap">{review.edgeCases}</p>
+            <p className="text-slate-300 whitespace-pre-wrap"><ReactMarkdown>{review.edgeCases}</ReactMarkdown></p>
           </Card>
           <Card title="Optimization Suggestions">
-            <p className="text-slate-300 whitespace-pre-wrap">{review.optimizationSuggestions}</p>
+            <p className="text-slate-300 whitespace-pre-wrap"> <ReactMarkdown>{review.optimizationSuggestions}</ReactMarkdown></p>
           </Card>
         </div>
       )}

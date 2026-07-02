@@ -6,6 +6,10 @@ import LoadingSpinner from "../components/LoadingSpinner";
 import api from "../services/api";
 import { ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
+import { CiCalendar } from "react-icons/ci";
+import { MdOutlineCalendarToday } from "react-icons/md";
+import { LiaChartBarSolid } from "react-icons/lia";
+import { FaRegFileAlt } from "react-icons/fa";
 
 export default function Roadmap() {
   const { user } = useAuth();
@@ -92,9 +96,15 @@ export default function Roadmap() {
           {roadmap.summary && (
             <Card title="Overview">
               <p className="text-slate-300">{roadmap.summary}</p>
-              <p className="text-sm text-slate-500 mt-2">
-                Estimated duration: {roadmap.estimatedWeeks} weeks
-              </p>
+              <div className="text-sm text-white mt-2 flex font-semibold gap-2">
+              <div className="text-sm text-gray-300 mt-2 flex items-center font-semibold bg-slate-700 gap-2 px-2 py-1 rounded-lg">
+                <MdOutlineCalendarToday size={16}/> {roadmap.estimatedWeeks} weeks
+              </div>
+
+              <div className="text-sm text-gray-300 mt-2 flex items-center font-semibold bg-slate-700 gap-2 px-2 py-1 rounded-lg">
+                <LiaChartBarSolid size={16} /> {roadmap.phases.length} Phases
+              </div>          
+              </div>
             </Card>
           )}
           {roadmap.phases?.map((phase, i) => (
@@ -102,27 +112,58 @@ export default function Roadmap() {
               <p className="text-slate-400 text-sm mb-4">{phase.description}</p>
               <div className="space-y-3">
                 {phase.topics?.map((topic, j) => (
-                  <div
+                  <div 
                     key={j}
                     className="bg-slate-900/60 rounded-xl p-4 border border-slate-700/40"
                   >
                     <div className="flex items-center justify-between mb-2">
-                      <h4 className="font-medium text-white">{topic.name}</h4>
-                      <span className="text-xs text-slate-500">
+                      <div className="flex items-center gap-4">
+                      <h4 className="font-medium text-white">
+                        {topic.name}
+                      </h4>
+
+                      <div className="text-xs text-slate-500 bg-slate-700/40 px-2 py-0.5 rounded-md">
+                        {topic.problems?.length || 0} Problems
+                      </div>
+                      </div>
+                      <span className="text-xs text-slate-500 bg-slate-700/40 px-2 py-0.5 rounded-md">
                         {topic.duration}
                       </span>
                     </div>
+
+                    <hr className="border-slate-800 my-2" />
+                    <div className="grid grid-cols-3 gap-2 r text-slate-400 font-semibold mb-1"> 
+                      <div className="pl-4">Problem</div>
+                      <div className="text-center pl-12">Link</div>
+                      <div className="text-end pr-4">Platform</div>
+                    </div>
                     {topic.problems?.length > 0 && (
-                      <ul className="text-sm text-slate-400 space-y-1">
+                      <ol className="text-sm text-slate-400 space-y-1 rounded-lg p-2 cursor-pointer border border-slate-700/40">
                         {topic.problems?.map((p, k) => (
                           <li key={k}>
-                            <span className="flex items-center gap-1.5">
-                              {`• ${p}`}
-                              <Link to={'https://leetcode.com/problems/two-sum'} target="_blank"><ExternalLink size={16} className="hover:text-blue-600 cursor-pointer"/></Link>
+                            <span className="grid grid-cols-2 gap-1.5 rounded-md px-2 py-3 hover:bg-slate-800/40 transition-colors bg-[rgba(30,41,59,0.3)]">
+                              
+                              <div className="text-slate-300 font-semibold">
+                              {`${p.name}`}
+                              </div>
+
+                            <div className="flex items-center gap-2 justify-between">
+                              <div>
+                              <Link to={p.link} target="_blank">
+                                <div className="text-purple-400 hover:text-purple-500 flex items-center gap-1 border px-2 py-0.5 rounded-md text-xs">
+                                  Solve
+                                </div>
+                              </Link>
+                              </div>
+                              
+                              <div className={`text-xs px-2 py-0.5 rounded-md border ${p.platform === "LeetCode" ? "text-orange-400 bg-[rgba(221,83,49,0.1)]" : p.platform === "Codeforces" ? "bg-purple-500/10 text-red-500" : p.platform === "GeeksforGeeks" ? "bg-green-500/10 text-green-400" : "bg-slate-500/10 text-slate-400"}`}>
+                                {p.platform}
+                              </div>
+                              </div>
                             </span>
                           </li>
                         ))}
-                      </ul>
+                      </ol>
                     )}
                   </div>
                 ))}
