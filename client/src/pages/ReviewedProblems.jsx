@@ -46,7 +46,7 @@ const ReviewedProblems = () => {
         prev.filter((problem) => problem._id !== problemId),
       );
     } catch (error) {
-      console.log(error);
+      toast.error("Failed to delete the problem");
     } 
   };
 
