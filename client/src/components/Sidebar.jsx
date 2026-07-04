@@ -16,7 +16,7 @@ export default function Sidebar({ onNavigate }) {
       <div className="p-6 border-b border-slate-800">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br  flex items-center justify-center text-white font-bold text-2xl">
-            <img src="public\logo.png" alt="" />
+            <img src="/logo.png" alt="logo" />
           </div>
           <span className="text-xl font-bold text-white ml-2">AlgoPilot</span>
         </div>
