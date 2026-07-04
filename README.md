@@ -8,14 +8,6 @@ Built using the **MERN Stack** and **Google Gemini AI**, AlgoPilot follows a **M
 
 ---
 
-## 🌐 Live Demo
-
-**Frontend:** https://your-vercel-link.vercel.app
-
-**Backend API:** https://your-render-link.onrender.com
-
----
-
 ## 🎥 Demo Video
 
 https://youtu.be/your-video-link
@@ -23,8 +15,6 @@ https://youtu.be/your-video-link
 ---
 
 ## 📸 Screenshots
-
-> Add screenshots here after deployment.
 
 ### Dashboard
 
@@ -150,12 +140,12 @@ Generates company-specific interview questions.
                          ▼
                  Express.js Backend API
                          │
-        ┌────────────────┼────────────────┐
-        │                │                │
-        ▼                ▼                ▼
- Planner Agent     Reviewer Agent   Interview Agent
-        │                │                │
-        └────────────────┼────────────────┘
+        ┌────────────────┼────────────────┼─────────────────┐
+        │                │                |                 │
+        ▼                ▼                ▼                 ▼
+ Planner Agent     Reviewer Agent   Interview Agent      Coach Agent
+        │                │                |                 │
+        └────────────────┼────────────────┼─────────────────┘
                          │
                          ▼
                   Google Gemini API
