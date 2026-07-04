@@ -18,19 +18,20 @@ https://youtu.be/your-video-link
 
 ### Dashboard
 
-![Dashboard](./screenshots/dashboard.png)
+<img width="1918" height="902" alt="image" src="https://github.com/user-attachments/assets/509987a8-6222-46bb-b8bc-3ddfdb23dc33" />
 
 ### AI Roadmap
 
-![Roadmap](./screenshots/roadmap.png)
+<img width="1918" height="902" alt="image" src="https://github.com/user-attachments/assets/6f3403e8-13b3-4ace-ba3a-ee44c2f8bd76" />
+
 
 ### AI Code Reviewer
 
-![Reviewer](./screenshots/reviewer.png)
+<img width="1918" height="907" alt="image" src="https://github.com/user-attachments/assets/ff96e1ae-0d10-42e1-8a95-73b4d3eb2c6b" />
 
 ### Interview Coach
 
-![Interview](./screenshots/interview.png)
+<img width="1918" height="900" alt="image" src="https://github.com/user-attachments/assets/00edb897-247b-43cc-91dd-c37cccfcf595" />
 
 ---
 
