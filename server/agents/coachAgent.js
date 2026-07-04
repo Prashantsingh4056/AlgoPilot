@@ -23,7 +23,7 @@ Do NOT include the solution.`;
   return parseJsonResponse(result.response.text());
 };
 
-const generateSolution = async ({ problemStatement, topic, difficulty }) => {
+const generateSolution = async ({ problemStatement, topic, difficulty , language}) => {
   const model = getModel();
 
   const prompt = `Provide a complete solution for this DSA problem.
@@ -31,10 +31,11 @@ const generateSolution = async ({ problemStatement, topic, difficulty }) => {
 Problem: ${problemStatement}
 Topic: ${topic}
 Difficulty: ${difficulty}
+Programming Language: ${language}
 
 Return ONLY valid JSON:
 {
-  "solution": "detailed solution with approach explanation and code in JavaScript"
+  "solution": "detailed solution with approach explanation and code in ${language} with comments without markdown"
 }`;
 
   const result = await model.generateContent(prompt);
