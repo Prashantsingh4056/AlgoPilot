@@ -7,7 +7,7 @@ export default function Landing() {
       <nav className="flex items-center justify-between px-6 py-4 max-w-6xl mx-auto">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br  flex items-center justify-center text-white font-bold text-2xl">
-            <img src="public\logo.png" alt="" />
+            <img src="/logo.png" alt="" />
           </div>
           <span className="text-2xl font-bold text-white">AlgoPilot</span>
         </div>

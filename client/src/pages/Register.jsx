@@ -48,7 +48,7 @@ export default function Register() {
         <div className="text-center mb-8">
           <div className='flex justify-center items-center'>
           <div className="w-12 h-12 rounded-lg bg-gradient-to-br  flex items-center justify-center text-white font-bold">
-            <img src="public\logo.png" alt="" />
+            <img src="/logo.png" alt="" />
           </div>
           </div>
           <h1 className="text-2xl font-bold text-white">Create your account</h1>
