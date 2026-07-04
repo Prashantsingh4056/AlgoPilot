@@ -224,7 +224,7 @@ AlgoPilot/
 ## 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/AlgoPilot.git
+[git clone https://github.com/yourusername/AlgoPilot.git](https://github.com/Prashantsingh4056/AlgoPilot.git)
 ```
 
 ```bash
