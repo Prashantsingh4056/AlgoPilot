@@ -8,12 +8,6 @@ Built using the **MERN Stack** and **Google Gemini AI**, AlgoPilot follows a **M
 
 ---
 
-## 🎥 Demo Video
-
-https://youtu.be/your-video-link
-
----
-
 ## 📸 Screenshots
 
 ### Dashboard
