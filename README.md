@@ -342,7 +342,7 @@ This project is licensed under the MIT License.
 
 GitHub: https://github.com/Prashantsingh4056
 
-LinkedIn: https://linkedin.com/in/your-linkedin
+LinkedIn: linkedin.com/in/prashant-singh-636982324
 
 ---
 
